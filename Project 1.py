@@ -541,7 +541,7 @@ import random
 
 numbers = random.sample(range(1, 49), 6)
 print("Lottery number: ", numbers, "\n")
-print(" ".join(map(str, numbers)))  '''
+print(" ".join(map(str, numbers)))  
 
 #EXERCISE 3, 8.7#
 
@@ -561,5 +561,110 @@ user = input("Enter a sentence: ")
 words = user.split()
 
 third_words = words[2::3]
-print("Example b:", " ".join(third_words))
+print("Example b:", " ".join(third_words)) 
+
+string = "Hello"
+L = [1, 14, 5, 9, 12]
+M = ("one", "two", "three", "four", "five", "six")
+
+u = [0 for i in range(10)]
+print(L, "\n")
+
+a = [i**2 for i in range(1,8)]
+print(L, "\n")
+
+x = [i*10 for i in L]
+print(x, "\n")
+
+y = [c*2 for c in string]
+print(y, "\n")
+
+p = [m[0] for m in M]
+print(p, "\n")
+
+h = [i for i in L if i<10]
+print(h, "\n")
+
+s = [m[0] for m in M if len(m) == 3]
+print(s, "\n") 
+
+L = []
+for i in range(2):
+    for j in range(2):
+        L.append((i,j))
+print(L, "\n")   
+
+m = ["orange", "apple", "banana", "pear", "red"]
+L = [1, 14, 5, 9, 100]
+
+c = len([i for i in L if i>50])
+print(c, "\n") 
+
+L = [1, 14, 5, 9, 100]
+frequencies = [L.count(i) for i in range(1, 20)]
+print(frequencies, "\n")
+
+from random import choice
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+s = ",".join([choice(alphabet) for i in range(20)])
+print(s, "\n")
+
+M = [[2,3], [6,2], [1,0]]
+c = [[y,x] for x,y in M]
+print(c, "\n")   
+
+
+temp = 0
+while temp != -1000:
+    temp = eval(input("Enter a temperature (-1000 to quit): "))
+    if temp !=-1000:
+        print("In Fahrenheit that is: ", 9/5*temp+32, "Fahrenheit")
+    else:
+        print("Bye")  
+
+
+from random import randint
+secret_num = randint(1, 10)
+guess = 0 
+while guess !=secret_num:
+    guess = eval(input("Guess the secret number: "))
+print("You finally got it!")  
+
+i = 0
+while i<10:
+    print(i)
+    i = i + 1  
+
+for i in range(10):
+    num = eval(input("Enter a number: "))
+    if num<0:
+        break
+
+
+i = 0
+num = 1
+while i<10 and num>0:
+    num = eval(input("Enter a number: "))  '''
+
+#QUESTION 3, EXERCISE 9.6#
+'''
+weight = eval(input("Enter a weight: "))
+while weight < 0:
+    weight = eval(input("Invalid Weight. Enter a valid weight: "))
+print("Your weight is: ", 2.20462262185*weight, "pounds")   '''
+
+#QUESTION 4, EXERCISE 9.6#
+
+password = "1234pp"
+user = input("Enter a password: ")
+tries = 0
+while user != password and tries < 4:
+    tries = tries + 1
+    user = input("Invalid Password. Enter a valid password: ")
+if user == password:
+    print("You are logged in to the system")
+else:
+    print("Too many attempts. You have been logged out of the system.")
+
+
 
