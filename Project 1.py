@@ -667,4 +667,24 @@ else:
     print("Too many attempts. You have been logged out of the system.")
 
 
+"""
+correct_password = "python123"
+attempts = 0
+
+while attempts < 5:
+    password = input("Enter your password: ")
+
+    if password == correct_password:
+        print("You are logged in to the system.")
+        break
+    else:
+        attempts += 1
+        print("Incorrect password.")
+
+if attempts == 5:
+    print("You are kicked off of the system.")
+
+"""
+
+
 
