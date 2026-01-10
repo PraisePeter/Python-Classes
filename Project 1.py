@@ -692,6 +692,8 @@ for i in range(1, 1001):
     s =str(i)
     if s ==s [::-1]:
         print(s)
+sequence[start : stop : step]
+"""
 
 
 birthday = "January 1, 2001"
@@ -702,6 +704,4 @@ birthday = "2001, January 1"
 year = int(birthday[:4])
 print("You are", 2026-year, "years old", "\n")
 
-sequence[start : stop : step]
-"""
 
