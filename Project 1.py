@@ -644,14 +644,14 @@ for i in range(10):
 i = 0
 num = 1
 while i<10 and num>0:
-    num = eval(input("Enter a number: "))  '''
+    num = eval(input("Enter a number: "))  
 
 #QUESTION 3, EXERCISE 9.6#
-'''
+
 weight = eval(input("Enter a weight: "))
 while weight < 0:
     weight = eval(input("Invalid Weight. Enter a valid weight: "))
-print("Your weight is: ", 2.20462262185*weight, "pounds")   '''
+print("Your weight is: ", 2.20462262185*weight, "pounds")
 
 #QUESTION 4, EXERCISE 9.6#
 
@@ -659,12 +659,49 @@ password = "1234pp"
 user = input("Enter a password: ")
 tries = 0
 while user != password and tries < 4:
-    tries = tries + 1
+
     user = input("Invalid Password. Enter a valid password: ")
+    tries = tries + 1
 if user == password:
     print("You are logged in to the system")
 else:
     print("Too many attempts. You have been logged out of the system.")
+'''
 
 
+"""
+correct_password = "python123"
+attempts = 0
+
+while attempts < 5:
+    password = input("Enter your password: ")
+
+    if password == correct_password:
+        print("You are logged in to the system.")
+        break
+    else:
+        attempts += 1
+        print("Incorrect password.")
+
+if attempts == 5:
+    print("You are kicked off of the system.")
+
+
+
+for i in range(1, 1001):
+    s =str(i)
+    if s ==s [::-1]:
+        print(s)
+
+
+birthday = "January 1, 2001"
+year = int(birthday[-4:])
+print("You are", 2026-year, "years old", "\n")
+
+birthday = "2001, January 1"
+year = int(birthday[:4])
+print("You are", 2026-year, "years old", "\n")
+
+sequence[start : stop : step]
+"""
 
