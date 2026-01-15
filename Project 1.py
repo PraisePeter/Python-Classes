@@ -688,14 +688,34 @@ if attempts == 5:
 
 
 
+correct_password = "python123"
+attempts = 0
+
+while attempts < 5:
+    password = input("Enter your password: ")
+
+    if password == correct_password:
+        print("You are logged in to the system.")
+        break
+    else:
+        attempts += 1
+        print("Incorrect password.")
+
+if attempts == 5:
+    print("You are kicked off of the system.")
+
+"""
+
+
+"""
 for i in range(1, 1001):
     s =str(i)
     if s ==s [::-1]:
         print(s)
-sequence[start : stop : step]
+sequence[start : stop : step] 
 """
 
-
+"""
 birthday = "January 1, 2001"
 year = int(birthday[-4:])
 print("You are", 2026-year, "years old", "\n")
@@ -704,4 +724,116 @@ birthday = "2001, January 1"
 year = int(birthday[:4])
 print("You are", 2026-year, "years old", "\n")
 
+#DICTIONARY#
+
+countries = {"Nigeria":"Lagos", "India":"Delhi", "Afghanistan":"Kabul", "Albania":"Tirana", "Algeria":"Algiers" }
+countries["Nigeria"] = "Abuja"
+countries["Ghana"] = "Accra"
+del countries["Afghanistan"]
+print(countries)
+country = input("Enter a country: ")
+print("The capital is: ", countries[country], "\n") 
+
+deck = [{"value":i, "suit":c}
+    for c in ["spades", "clubs", "hearts", "diamonds"]
+    for i in range(2,15)]
+print(deck)
+deck = []
+
+for c in ['spades', 'clubs', 'hearts', 'diamonds']:
+    for i in range(2, 15):
+        card = {'value': i, 'suit': c}
+        deck.append(card)
+
+card_value_map = {
+    2:  "2",
+    3:  "3",
+    4:  "4",
+    5:  "5",
+    6:  "6",
+    7:  "7",
+    8:  "8",
+    9:  "9",
+    10: "10",
+    11: "Jack",
+    12: "Queen",
+    13: "King",
+    14: "Ace"
+}
+
+
+countries = {"Nigeria":"Lagos", "India":"Delhi", "Afghanistan":"Kabul", "Albania":"Tirana", "Algeria":"Algiers" }
+countries["Nigeria"] = "Abuja"
+countries["Ghana"] = "Accra"
+del countries["Afghanistan"]
+
+
+countries2 = countries.copy()
+print(countries2)
+
+country = input("Enter a country: ")
+if country in countries2:
+    print("The capital is:", countries2[country])
+else:
+    print("Not in dictionary")
+
+#looping dictionary
+
+for country in countries2:
+    print(country)   """
+#
+# from string import punctuation
+#
+# text = open("romeo.txt").read()
+# text = text.lower()
+# for p in punctuation:
+#     text = text.replace(p, " ")
+# words = text.split()
+# d = { }
+# for w in words:
+#     if w in d:
+#         d[w] = d[w] + 1
+#     else:
+#         d[w] = 1
+# items = list(d.items())
+# items.sort()
+# for i in items:
+#     print(i)
+#
+# # items = [(i[1], i[0]) for i in items]
+# # items.sort()
+# # for i in items:
+# #     print(i)
+#
+# items = list(d.items())              # (word, count)
+# items = [(count, word) for word, count in items]  # swap
+# items.sort()
+#
+# for item in items:
+#     print(item)
+
+#EXERCISE 1, 11.5
+
+#create an empty dictionary to store product and prices
+product = {}
+#repeatedly ask user to enter product names and prices
+while True:
+    product_name = input("Enter product name (or 'done' to finish): ")
+    if product_name.lower() == "done":
+        break
+
+    price = eval(input("Enter price (or 'done' to finish): "))
+    product[product_name] = price
+print(product)
+
+#allow user to search for product prices
+while True:
+    search = input("Enter a product name to check price (or 'done' to quit): ")
+    if search.lower() == "done":
+        break
+    if search in product:
+        print("Price:", product[search])
+    else:
+        print("Not found")
+print(product)
 
