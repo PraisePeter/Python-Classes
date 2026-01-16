@@ -837,3 +837,30 @@ while True:
         print("Not found")
 print(product)
 
+#EXERCISE 2
+
+amount = eval(input("Enter an amount: $"))
+while True:
+    if product <= amount:
+        print("Products: ", product)
+
+
+
+# #EXERCISE 3
+# days = {"January": 31, "February": 28, "March": 31, "April": 30,
+#         "May": 31, "June": 30, "July": 31, "August": 31,
+#         "September": 30, "October": 31, "November": 30, "December": 31}
+#
+# # a, how many days in a chosen month
+#
+# # search = input("Enter month: ")
+# # print("The number of days is: ", days[search])
+#
+# # b, Print out all the keys in alphabetical order
+# # items = list(days.values())
+# # items.sort()
+# # for i in items:
+# #     print(i)
+#
+# #C PRINT OUT ALL THE MONTHS WITH 31 DAYS
+
