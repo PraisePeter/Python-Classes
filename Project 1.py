@@ -811,29 +811,31 @@ for country in countries2:
 #
 # for item in items:
 #     print(item)
+#
+# #EXERCISE 1, 11.5
+#
+# #create an empty dictionary to store product and prices
+# product = {}
+# #repeatedly ask user to enter product names and prices
+# while True:
+#     product_name = input("Enter product name (or 'done' to finish): ")
+#     if product_name.lower() == "done":
+#         break
+#
+#     price = eval(input("Enter price (or 'done' to finish): "))
+#     product[product_name] = price
+# print(product)
+#
+# #allow user to search for product prices
+# while True:
+#     search = input("Enter a product name to check price (or 'done' to quit): ")
+#     if search.lower() == "done":
+#         break
+#     if search in product:
+#         print("Price:", product[search])
+#     else:
+#         print("Not found")
+# print(product)
+#
 
-#EXERCISE 1, 11.5
-
-#create an empty dictionary to store product and prices
-product = {}
-#repeatedly ask user to enter product names and prices
-while True:
-    product_name = input("Enter product name (or 'done' to finish): ")
-    if product_name.lower() == "done":
-        break
-
-    price = eval(input("Enter price (or 'done' to finish): "))
-    product[product_name] = price
-print(product)
-
-#allow user to search for product prices
-while True:
-    search = input("Enter a product name to check price (or 'done' to quit): ")
-    if search.lower() == "done":
-        break
-    if search in product:
-        print("Price:", product[search])
-    else:
-        print("Not found")
-print(product)
 
