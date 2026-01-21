@@ -1,1 +1,9 @@
 Romeo and Juliet is a tragic story of two teens from feuding families (Montagues and Capulets) in Verona who fall instantly in love at a party, secretly marry, but are tragically driven to suicide by their families' hatred, their deaths ultimately ending the feud. A messenger fails to tell Romeo about Juliet faking her death, so he drinks poison in her tomb; she wakes, finds him dead, and stabs herself.
+
+
+
+days = {"January": 31, "February": 28, "March": 31, "April": 30,
+        "May": 31, "June": 30, "July": 31, "August": 31,
+        "September": 30, "October": 31, "November": 30, "December": 31}
+
+month =

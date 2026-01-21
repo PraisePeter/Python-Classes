@@ -837,5 +837,76 @@ for country in countries2:
 #         print("Not found")
 # print(product)
 #
+#
 
+#EXERCISE 2
 
+# amount = eval(input("Enter an amount: $"))
+# found = False
+# while True:
+#     if product <= amount:
+#         print("Products: ", product)
+
+# amount = eval(input("Enter an amount: $"))
+# found = False
+# for product_name, price in product.items():
+#     if price < amount:
+#         print(product_name, ":", price)
+#         found = True
+#
+# if not found:
+#     print("No product found less than that amount.")
+
+# amount = eval(input("Enter an amount: $"))
+# for product_name, price in product.items():
+#     if price < amount:
+#         print(product_name, ":", price)
+#     else:
+#         print("No product found less than that amount.")
+
+#EXERCISE 3
+days = {"January": 31, "February": 28, "March": 31, "April": 30,
+        "May": 31, "June": 30, "July": 31, "August": 31,
+        "September": 30, "October": 31, "November": 30, "December": 31}
+
+# EXERCISE A, how many days in a chosen month
+
+# search = input("Enter month: ")
+# print("The number of days is: ", days[search])
+
+# EXERCISE b, Print out all the keys in alphabetical order
+# items = list(days.keys())
+# items.sort()
+# for i in items:
+#     print(i)
+
+# EXERCISE b,
+# for search in sorted(days.keys()):
+#     print(search)
+#
+#
+# #EXERCISE C PRINT OUT ALL THE MONTHS WITH 31 DAYS
+# for month, num_days in days.items():
+#     if num_days == 31:
+#         print(month, ":", num_days)
+#
+# # EXERCISE D, Print out the key-value pairs sorted by the number of days in each month
+# items = list(days.items())
+# items.sort(key=lambda x: x[1])
+#
+# for item in items:
+#     print("The key values are: ",item)
+
+# exercise E, PAGE 105
+month_input = input("Enter the first three letters of a month: ").capitalize()
+
+found = False
+
+for month in days:
+    if month.startswith(month_input):
+        print(month, "has", days[month], "days")
+        found = True
+        break
+
+if not found:
+    print("Invalid month")
