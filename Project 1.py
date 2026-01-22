@@ -898,15 +898,41 @@ days = {"January": 31, "February": 28, "March": 31, "April": 30,
 #     print("The key values are: ",item)
 
 # exercise E, PAGE 105
-month_input = input("Enter the first three letters of a month: ").capitalize()
 
-found = False
 
-for month in days:
-    if month.startswith(month_input):
-        print(month, "has", days[month], "days")
-        found = True
-        break
+# background = open("text/Exercise.txt").read()
+# print(background, "\n")
+#
+# lines = [line.strip() for line in open("text/Exercise.txt").readlines()]
+# print(lines, "\n")
 
-if not found:
-    print("Invalid month")
+# lines = []
+# for line in open("text/Exercise.txt"):
+#     lines.append(line.strip())
+#     print(lines, "\n")
+
+# THIS IS TO WRITE, SAVE AND CLOSE THE FILE. VERY IMPORTANT
+# background = open("text/Exercise.txt", "w")
+# print("This is line 1: Year 2025", file=background)
+# print("This is line 2: ", file=background)
+# background.close()
+
+# file1 = open("text/ftemps.txt", "w")
+# temperature = []
+# for lines in open("text/temps.txt"):
+#     temperature.append(lines.strip())
+#
+# for t in temperature:
+#     print(int(t)*9/5+32, file=file1)
+# file1.close()
+
+from random import randint
+
+questions = input("Enter a question: ")
+answer =
+questions = []
+for i in range(50):
+L.append(randint(1,100))
+
+
+
