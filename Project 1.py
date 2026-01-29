@@ -925,14 +925,41 @@ days = {"January": 31, "February": 28, "March": 31, "April": 30,
 # for t in temperature:
 #     print(int(t)*9/5+32, file=file1)
 # file1.close()
+#
 
-from random import randint
+# num_right = 0
+# # Question 1
+# print('What is the capital of France?', end=' ')
+# guess = input()
+# if guess.lower()=='paris':
+#         print('Correct!')
+#         num_right+=1
+# else:
+#         print('Wrong. The answer is Paris.')
+# print('You have', num_right, 'out of 1 right')
+# #Question 2
+# print('Which state has only one neighbor?', end=' ')
+# guess = input()
+# if guess.lower()=='maine':
+#         print('Correct!')
+#         num_right+=1
+# else:
+#         print('Wrong. The answer is Maine.')
+#         print('You have', num_right, 'out of 2 right,')
 
-questions = input("Enter a question: ")
-answer =
-questions = []
-for i in range(50):
-L.append(randint(1,100))
 
+questions = ['What is the capital of France?',
+        'Which state has only one neighbor?']
+answers = ["Paris", "maine"]
 
+num_right = 0
 
+for i in range (len(questions)):
+        guess = input(questions[i])
+        if guess.lower()==answers[i].lower():
+                print('Correct!')
+                num_right+=1
+        else:
+                print('Wrong. The answer is: ', answers[i])
+
+print('You have', num_right, 'out of', i+1)
