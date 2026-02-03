@@ -948,18 +948,67 @@ days = {"January": 31, "February": 28, "March": 31, "April": 30,
 #         print('You have', num_right, 'out of 2 right,')
 
 
-questions = ['What is the capital of France?',
-        'Which state has only one neighbor?']
-answers = ["Paris", "maine"]
+# questions = ['What is the capital of France?',
+#         'Which state has only one neighbor?']
+# answers = ["Paris", "maine"]
+#
+# num_right = 0
+#
+# for i in range (len(questions)):
+#         guess = input(questions[i])
+#         if guess.lower()==answers[i].lower():
+#                 print('Correct!')
+#                 num_right+=1
+#         else:
+#                 print('Wrong. The answer is: ', answers[i])
+#
+# print('You have', num_right, 'out of', i+1)
 
-num_right = 0
 
-for i in range (len(questions)):
-        guess = input(questions[i])
-        if guess.lower()==answers[i].lower():
-                print('Correct!')
-                num_right+=1
-        else:
-                print('Wrong. The answer is: ', answers[i])
+wordlist = [line.strip() for line in open("text/wordlist.txt")]
 
-print('You have', num_right, 'out of', i+1)
+
+#example 1
+
+for word in wordlist:
+        if len(word)==3:
+                print(word, "\n")
+
+#example 2
+
+for word in wordlist:
+        if word[:2]=="tr" or word[:2]=="sk":
+                print("This is the answer for example 2:", word, "\n")
+
+
+#example 3: to determine the percentage of vowels in list
+count = 0
+for word in wordlist:
+        if word[0] in "aeiou":
+                count = count + 1
+                print(word)
+
+print("Percentage of vowel:", 100*count/len(wordlist), "\n")
+print("Percentage of vowel:", count/100, "\n")
+
+#example 4: Print all 7-letter words that start with th and end in ly. Things like this are good for cheating at crosswords
+for word in wordlist:
+        if len(word)>=4 and word[:2]=="in" and word[-2:]=="ie":
+                print("This is the answer for example 4:", word, "\n")
+
+
+#example 5: Print the first ten words that start with a.
+count = 0
+while wordlist [count][0]!="a":
+        count=count+1
+print(wordlist[count:count+10])
+print(count)
+
+
+print(wordlist[0])
+
+
+data = ["cat","dog","sun","book","pen","ant","car","tree",
+        "sky","hat","run","code","python","cup","map","apple,",
+        "olet","ink"]
+print(data[2:11])
