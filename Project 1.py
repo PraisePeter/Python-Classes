@@ -964,51 +964,140 @@ days = {"January": 31, "February": 28, "March": 31, "April": 30,
 #
 # print('You have', num_right, 'out of', i+1)
 
+#
+# wordlist = [line.strip() for line in open("text/wordlist.txt")]
+#
+#
+# #example 1
+#
+# for word in wordlist:
+#         if len(word)==3:
+#                 print(word, "\n")
+#
+# #example 2
+#
+# for word in wordlist:
+#         if word[:2]=="tr" or word[:2]=="sk":
+#                 print("This is the answer for example 2:", word, "\n")
+#
+#
+# #example 3: to determine the percentage of vowels in list
+# count = 0
+# for word in wordlist:
+#         if word[0] in "aeiou":
+#                 count = count + 1
+#                 print(word)
+#
+# print("Percentage of vowel:", 100*count/len(wordlist), "\n")
+# print("Percentage of vowel:", count/100, "\n")
+#
+# #example 4: Print all 7-letter words that start with th and end in ly. Things like this are good for cheating at crosswords
+# for word in wordlist:
+#         if len(word)>=4 and word[:2]=="in" and word[-2:]=="ie":
+#                 print("This is the answer for example 4:", word, "\n")
+#
+#
+# #example 5: Print the first ten words that start with a.
+# count = 0
+# while wordlist [count][0]!="a":
+#         count=count+1
+# print(wordlist[count:count+10])
+# print(count)
+#
+#
+# print(wordlist[0])
+#
+#
+# data = ["cat","dog","sun","book","pen","ant","car","tree",
+#         "sky","hat","run","code","python","cup","map","apple,",
+#         "olet","ink"]
+# print(data[2:11])
 
-wordlist = [line.strip() for line in open("text/wordlist.txt")]
+# def print_hello():
+#         print("Hello")
+# print_hello()
+# print("1234567")
+# print_hello()  #calling out the function
 
 
-#example 1
+def draw_square():
+        print("*" * 15)
+        print("*", " " * 11, "*")
+        print("*", " " * 11, "*")
+        print("*" * 15)
+# draw_square()
+# draw_square()
 
-for word in wordlist:
-        if len(word)==3:
-                print(word, "\n")
-
-#example 2
-
-for word in wordlist:
-        if word[:2]=="tr" or word[:2]=="sk":
-                print("This is the answer for example 2:", word, "\n")
-
-
-#example 3: to determine the percentage of vowels in list
-count = 0
-for word in wordlist:
-        if word[0] in "aeiou":
-                count = count + 1
-                print(word)
-
-print("Percentage of vowel:", 100*count/len(wordlist), "\n")
-print("Percentage of vowel:", count/100, "\n")
-
-#example 4: Print all 7-letter words that start with th and end in ly. Things like this are good for cheating at crosswords
-for word in wordlist:
-        if len(word)>=4 and word[:2]=="in" and word[-2:]=="ie":
-                print("This is the answer for example 4:", word, "\n")
+#Parameters are the variables defined in a function's
+# declaration (placeholders), while arguments are the
+# actual values passed to those variables when the function is called.
 
 
-#example 5: Print the first ten words that start with a.
-count = 0
-while wordlist [count][0]!="a":
-        count=count+1
-print(wordlist[count:count+10])
-print(count)
+def print_hello(n):
+        print("Hello" * n)
+        print()
+#
+# print_hello(3)
+# print_hello(5)
+# times = 2
+# print_hello(times)
 
+#n = parameter
+#(5) = argument
+def greet(name):
+        print('You are welcome!,', name)
 
-print(wordlist[0])
+# greet("Praise")
 
+#parameter = name
+#argument = Praise
+# name = input("Enter your name: ")
+# print(name, "You are welcome!")
 
-data = ["cat","dog","sun","book","pen","ant","car","tree",
-        "sky","hat","run","code","python","cup","map","apple,",
-        "olet","ink"]
-print(data[2:11])
+def profile(name, age):
+        print("Hello", name, "You are", age, "years old")
+
+# profile("Praise", 8)
+
+def value(x, y):
+        print(x+y)
+
+# value(12, 12)
+
+def convert(t):
+        print(t*9/5+32)
+
+# convert(20)
+
+def convert(t):
+        return t*9/5+32
+
+# t_fahrenheit = convert(20)
+# print(t_fahrenheit)
+#
+#
+# a = type(t_fahrenheit)
+# print(a)
+
+#RETURN ARGUMENT
+
+def solve(a, b, c, d, e, f):
+        x = (d*e-b*f)/(a*d-b*c)
+        y = (a*f-c*e)/(a*d-b*c)
+        return [x,y]
+# xsol, ysol = solve(2,3,4,1, 2, 5)
+# print("The solution is x = ", xsol, "and y = ", ysol)
+
+# fruits = ["apple", "banana", "cherry"]
+# x, y, z = fruits
+# print(y)
+
+def calculator(a,b):
+        add = (a+b)
+        sub = (a-b)
+        div = (a//b)
+        mul = (a*b)
+        return [add,sub,div,mul]
+
+addcalc, subcalc, divcalc, mulcalc = calculator(5,28)
+print("The solution is addition ", addcalc, "subtraction:", subcalc, "division:", divcalc, "and multiplication:", mulcalc)
