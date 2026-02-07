@@ -1101,3 +1101,4 @@ def calculator(a,b):
 
 addcalc, subcalc, divcalc, mulcalc = calculator(5,28)
 print("The solution is addition ", addcalc, "subtraction:", subcalc, "division:", divcalc, "and multiplication:", mulcalc)
+
