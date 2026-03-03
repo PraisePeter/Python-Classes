@@ -973,7 +973,8 @@ days = {"January": 31, "February": 28, "March": 31, "April": 30,
 # for word in wordlist:
 #         if len(word)==3:
 #                 print(word, "\n")
-#
+
+
 # #example 2
 #
 # for word in wordlist:
@@ -1100,5 +1101,59 @@ def calculator(a,b):
         return [add,sub,div,mul]
 
 addcalc, subcalc, divcalc, mulcalc = calculator(5,28)
-print("The solution is addition ", addcalc, "subtraction:", subcalc, "division:", divcalc, "and multiplication:", mulcalc)
+# print("The solution is addition ", addcalc, "subtraction:", subcalc, "division:", divcalc, "and multiplication:", mulcalc)
+
+
+#assignments on files
+#assignment
+wordlist = [line.strip() for line in open("text/wordlist.txt")]
+
+#(a) All words ending in ime
+for word in wordlist:
+        if word[-3:] == "mie":
+                print("These are the words ending in ime:", word, "\n")
+
+#(b) All words whose second, third, and fourth letters are ave
+for word in wordlist:
+        if word[1:4] == "ave":
+                print("The answer is/are:", word)
+print("\n")
+
+#(c) How many words contain at least one of the letters r, s, t, l, n, e
+count = 0
+for word in wordlist:
+        for i in "rstlnei":
+                if word in i:
+                        count+=1
+                        print(word)
+
+print("These are the numbers:", count)
+
+
+#(d) The percentage of words that contain at least one of the letters r, s, t, l, n, e
+for word in wordlist:
+        if word in "rstlnei":
+                count = count+1
+                print(word) #it's not printing the words
+
+print("Percentage of vowel:", 100*count/len(wordlist), "\n")
+
+#(e) All words with no vowels
+#not correct
+# for word in wordlist:
+#         if word.lower() != "aeiou":
+#                 print(word.lower())
+
+#(f) All words that contain every vowel
+#WRONG
+for word in wordlist:
+        if word in "aeiou":
+                print(word.lower())
+
+#(g) Whether there are more ten-letter words or seven-letter words
+for word in wordlist:
+        if word == 10:
+                print("Ans is", word)
+
+
 
