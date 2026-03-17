@@ -183,13 +183,53 @@ def first_diff(s1, s2):
             return length
 
     return -1
-print(first_diff("cane", "canes"))
+# print(first_diff("cane", "canes"))
 
 
 # first location of "a" in our string
 
-country = "nigeria"
+# country = "nigeria"
+#
+# for i in range(len(country)):
+#     if country[i] == "a":
+#         print(i)
 
-for i in range(len(country)):
-    if country[i] == "a":
-        print(i)
+
+#CAESAR CIPHER
+def alphabets ():
+
+    encrypt = ["a","b","c","e","f","g","h","i","j","k","l","m","n","o","p","q","r",
+               "s","t","u","v","w","x","y","z"]
+    u = ["a","b","c","e","f","g","h","i","j","k","l","m","n","o","p","q","r",
+               "s","t","u","v","w","x","y","z"]
+    switch = 8
+
+    passphrase = eval(input("Enter your passphrase:"))
+    if passphrase == switch:
+        print("Next stage.")
+    else:
+        print("Enter a valid passphrase.")
+
+    value = input("Enter a valid encryption key:")
+
+
+    for value in range(len(encrypt)):
+
+        decrypt = encrypt[2:3]
+
+    print(decrypt)
+
+
+alphabets()
+#
+# encrypt = ["a", "b", "c", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n","o", "p", "q", "r",
+#            "s","t", "u", "v", "w", "x", "y", "z"]
+# u = ["a", "b", "c", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n","o", "p", "q", "r",
+#            "s","t", "u", "v", "w", "x", "y", "z"]
+# x = input("enter a value")
+# for i in range (len(encrypt)):
+#     for item in str(encrypt):
+#
+#
+# print(x)
+
