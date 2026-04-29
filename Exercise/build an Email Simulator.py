@@ -847,9 +847,31 @@ def main():
 if __name__ == '__main__':
     main()
 
+
+Step 51
+Now you'll demonstrate the inbox functionality. Ramy will check his inbox, read the first email, delete the second email, and then check his inbox again to see the changes.
+
+In your main function, after sending the emails, add code to:
+
+Have Ramy check his inbox using the check_inbox method.
+Have Ramy read the first email.
+Have Ramy delete the first email.
+Have Ramy check his inbox again.
+With this, you have completed the email simulator!
+
+ANS:
+
+
+    tory.send_email(ramy, 'Hello', 'Hi Ramy, just saying hello!')
+    ramy.send_email(tory, 'Re: Hello', 'Hi Tory, hope you are fine.')
+    ramy.check_inbox()
+    ramy.read_email(1)
+    ramy.delete_email(1)
+    ramy.check_inbox()
 """
 
 import datetime
+
 
 class Email:
     def __init__(self, sender, receiver, subject, body):
@@ -876,6 +898,8 @@ class Email:
     def __str__(self):
         status = 'Read' if self.read else 'Unread'
         return f"[{status}] From: {self.sender.name} | Subject: {self.subject} | Time: {self.timestamp.strftime('%Y-%m-%d %H:%M')}"
+
+
 class Inbox:
     def __init__(self):
         self.emails = []
@@ -890,7 +914,6 @@ class Inbox:
         print('\nYour Emails:')
         for i, email in enumerate(self.emails, start=1):
             print(f'{i}. {email}')
-
 
     def read_email(self, index):
         if not self.emails:
@@ -913,6 +936,7 @@ class Inbox:
         del self.emails[actual_index]
         print('Email deleted.\n')
 
+
 class User:
     def __init__(self, name):
         self.name = name
@@ -933,10 +957,18 @@ class User:
     def delete_email(self, index):
         self.inbox.delete_email(index)
 
+
 def main():
     tory = User('Tory')
     ramy = User('Ramy')
+
     tory.send_email(ramy, 'Hello', 'Hi Ramy, just saying hello!')
     ramy.send_email(tory, 'Re: Hello', 'Hi Tory, hope you are fine.')
+    ramy.check_inbox()
+    ramy.read_email(1)
+    ramy.delete_email(1)
+    ramy.check_inbox()
+
+
 if __name__ == '__main__':
     main()
