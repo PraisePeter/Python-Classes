@@ -103,3 +103,118 @@ Waiting:24. create_spend_chart should print a different chart representation. Ch
 
 """
 
+
+class Category:
+    def __init__(self, name):
+        self.name = name
+        self.ledger = []
+
+    def deposit(self, amount, description=""):
+        """Append a deposit transaction to the ledger."""
+        self.ledger.append({"amount": amount, "description": description})
+
+    def withdraw(self, amount, description=""):
+        """Append a withdrawal transaction (negative amount) if funds are sufficient."""
+        if self.check_funds(amount):
+            self.ledger.append({"amount": -amount, "description": description})
+            return True
+        return False
+
+    def get_balance(self):
+        """Calculate and return the current balance based on ledger entries."""
+        return sum(item["amount"] for item in self.ledger)
+
+    def transfer(self, amount, other_category):
+        """
+        Transfer funds to another category.
+        Withdraw from current category and deposit to other category.
+        """
+        if self.check_funds(amount):
+            # Withdraw from current category
+            self.withdraw(amount, f"Transfer to {other_category.name}")
+            # Deposit to other category
+            other_category.deposit(amount, f"Transfer from {self.name}")
+            return True
+        return False
+
+    def check_funds(self, amount):
+        """Return True if the amount is less than or equal to the balance."""
+        return amount <= self.get_balance()
+
+    def __str__(self):
+        """Format the category ledger for printing."""
+        # Title line
+        title_line = f"{self.name:*^30}\n"
+
+        # Ledger entries
+        entries = ""
+        for item in self.ledger:
+            # Truncate description to 23 characters
+            description = item["description"][:23]
+            # Format amount to 2 decimal places, right-aligned in 7 characters
+            amount = f"{item['amount']:.2f}"
+            entries += f"{description:<23}{amount:>7}\n"
+
+        # Total line
+        total_line = f"Total: {self.get_balance():.2f}"
+
+        return title_line + entries + total_line
+
+
+def create_spend_chart(categories):
+    """
+    Generate a bar chart showing the percentage spent in each category.
+    Only withdrawals (negative amounts) are considered for spending.
+    """
+    # 1. Calculate total spent and percentage per category
+    spent_per_category = []
+    total_spent = 0
+
+    for category in categories:
+        spent = sum(-item["amount"] for item in category.ledger if item["amount"] < 0)
+        spent_per_category.append(spent)
+        total_spent += spent
+
+    # Avoid division by zero
+    if total_spent == 0:
+        percentages = [0] * len(categories)
+    else:
+        # Calculate percentage rounded down to the nearest 10
+        percentages = [int((spent / total_spent) * 100) // 10 * 10 for spent in spent_per_category]
+
+    # 2. Build the chart
+    chart = "Percentage spent by category\n"
+
+    # Create bars for each percentage level (100 down to 0)
+    for level in range(100, -1, -10):
+        chart += f"{level:>3}|"
+        for percent in percentages:
+            if percent >= level:
+                chart += " o "
+            else:
+                chart += "   "
+        chart += " \n"  # Space after last bar, then newline
+
+    # Horizontal line
+    chart += "    " + "-" * (len(categories) * 3 + 1) + "\n"
+
+    # Category names vertically
+    # Find the longest category name length
+    max_name_length = max(len(category.name) for category in categories)
+
+    # Write names vertically
+    for i in range(max_name_length):
+        chart += "     "
+        for category in categories:
+            if i < len(category.name):
+                chart += f"{category.name[i]}  "
+            else:
+                chart += "   "
+        # Remove trailing space and add newline (except for the last line)
+        if i < max_name_length - 1:
+            chart += "\n"
+        else:
+            # No newline at the end of the last line
+            chart = chart.rstrip("\n")
+
+    return chart
